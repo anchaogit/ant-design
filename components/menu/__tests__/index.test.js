@@ -197,7 +197,7 @@ describe('Menu', () => {
     wrapper.find('.ant-menu-submenu-title').simulate('mouseenter');
     expect(wrapper.find('.ant-menu-sub').hostNodes().length).toBe(1);
     expect(wrapper.find('.ant-menu-sub').hostNodes().at(0).hasClass('ant-menu-hidden')).not.toBe(true);
-    wrapper.find('.ant-menu-submenu').simulate('mouseleave');
+    wrapper.find('.ant-menu-submenu').first().simulate('mouseleave');
     await delay(300);
     wrapper.update();
     expect(wrapper.find('.ant-menu-sub').hostNodes().at(0).hasClass('ant-menu-hidden')).toBe(true);
@@ -217,7 +217,7 @@ describe('Menu', () => {
     wrapper.find('.ant-menu-submenu-title').simulate('mouseenter');
     expect(wrapper.find('.ant-menu-sub').hostNodes().length).toBe(1);
     expect(wrapper.find('.ant-menu-sub').hostNodes().at(0).hasClass('ant-menu-hidden')).not.toBe(true);
-    wrapper.find('.ant-menu-submenu').simulate('mouseleave');
+    wrapper.find('.ant-menu-submenu').first().simulate('mouseleave');
     await delay(300);
     wrapper.update();
     expect(wrapper.find('.ant-menu-sub').hostNodes().at(0).hasClass('ant-menu-hidden')).toBe(true);
